@@ -570,7 +570,7 @@ public:
     {
         auto world_dist = std::max(world->size.x, world->size.y) * 1.2;
         moveTowards(delta * 5.0, sp::Vector3d(world->size.x * 0.5, world->size.y * 0.5, 0), world_dist, world_dist);
-        moveTowards(delta * 5.0, player->getPosition3D(), 5.0, 7.0);
+        //moveTowards(delta * 5.0, player->getPosition3D(), 5.0, 7.0);
 
         auto view_vector = player->getPosition3D() - getPosition3D();
         auto view_vector2d = sp::Vector2d(view_vector.x, view_vector.y);
