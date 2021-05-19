@@ -19,8 +19,8 @@
         sound.hovered: gui/theme/buttonUp.wav
     }
     [panel] {
-        image: gui/theme/square_filled.png#pixel
-		color: #FFFFFFA0
+        image: gui/theme/pixel.png
+		color: #000000A0
 		size: 8
         [overlay] {
             image: gui/theme/pixel.png

@@ -1,0 +1,38 @@
+[HUD] {
+    stretch: true
+    
+    [KNOWN_LIST] {
+        type: label
+        text_size: 12
+        margin: 5, 30
+        alignment: topleft
+        scale_to_text: true
+        text_alignment: topleft
+    }
+    
+    [INFO_BOX] {
+        type: panel
+        layout: vertical
+        alignment: topright
+        margin: 0, 30
+
+        [INFO] {
+            type: label
+            scale_to_text: true
+            text_size: 12
+            line_wrap: true
+            text_alignment: left
+            width: 200
+            margin: 5
+            caption: The sunflower (Helianthus annuus) is a living annual plant in the family Asteraceae, with a large flower head (capitulum). The stem of the flower can grow up to 3 metres tall, with a flower head that can be 30 cm wide. Other types of sunflowers include the California Royal Sunflower, which has a burgundy (red + purple) flower head. The flower head is actually an inflorescence made of hundreds or thousands of tiny flowers called florets. The central florets look like the centre of a normal flower, apseudanthium. The benefit to the plant is that it is very easily seen by the insects and birds which pollinate it, and it produces thousands of seeds.
+        }
+    }
+    
+    [ACTION] {
+        type: button
+        size: 450, 30
+        caption: action
+        alignment: bottom
+        margin: 0, 30
+    }
+}

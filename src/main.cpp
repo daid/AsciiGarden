@@ -16,6 +16,7 @@
 #include <sp2/graphics/scene/basicnoderenderpass.h>
 #include <sp2/graphics/scene/collisionrenderpass.h>
 #include <sp2/graphics/textureManager.h>
+#include <sp2/graphics/fontManager.h>
 #include <sp2/scene/scene.h>
 #include <sp2/scene/node.h>
 #include <sp2/scene/camera.h>
@@ -215,7 +216,7 @@ int main(int argc, char** argv)
     sp::io::ResourceProvider::createDefault();
 
     //Disable or enable smooth filtering by default, enabling it gives nice smooth looks, but disabling it gives a more pixel art look.
-    sp::texture_manager.setDefaultSmoothFiltering(true);
+    sp::texture_manager.setDefaultSmoothFiltering(false);
 
     //Create a window to render on, and our engine.
     window = new sp::Window();
@@ -232,6 +233,10 @@ int main(int argc, char** argv)
     scene_layer->addRenderPass(new sp::CollisionRenderPass());
 #endif
     window->addLayer(scene_layer);
+
+    //Hack to make sure our font texture contains all glyhps and never resizes
+    auto font = sp::font_manager.get("gui/theme/RobotoMono-Medium.ttf");
+    font->createString(" \"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[|]^_`abcdefghijklmnopqrstuvwxyz{}~", 64, 1.0, sp::Vector2d(0, 0), sp::Alignment::Center);
 
     new sp::audio::MusicPlayer("music");
     new IngameMenuScene();
